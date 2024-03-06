@@ -1,0 +1,110 @@
+body {
+  font-family: Poppins, Work Sans, sans-serif;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+  font-family: Work Sans Semi Bold;
+  src: url(/src/assets/fonts/WorkSans-SemiBold.ttf);
+}
+@font-face {
+  font-family: Work Sans Bold;
+  src: url(/src/assets/fonts/WorkSans-Bold.ttf);
+}
+@font-face {
+  font-family: Work Sans;
+  src: url(/src/assets/fonts/WorkSans-Regular.ttf);
+}
+.StripeElement {
+  display: block;
+  width: 280px;
+  font-family: Work Sans;
+  font-size: 14px;
+  padding: 12px 8px;
+  box-shadow: 0 1px 3px rgba(50, 50, 93, 0.14902),
+    0 1px 0 rgba(0, 0, 0, 0.0196078);
+  border-radius: 4px;
+  background: #f0f0f0;
+}
+@media (min-width: 770px) {
+  .StripeElement {
+    width: 540px;
+  }
+}
+.PaymentRequestButton {
+  padding: 0;
+  margin-bottom: 20px;
+}
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out 0.3s;
+}
+.fade-leave {
+  position: absolute;
+  top: 0;
+  margin-top: 100px;
+  opacity: 1;
+}
+@media (min-width: 768px) {
+  .fade-leave {
+    margin-top: 165px;
+  }
+}
+.fade-leave.fade-leave-active {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.fade-appear {
+  opacity: 0;
+}
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+.loading-animation {
+  position: relative;
+  background: #ffc942;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  border: 10px solid #ffdf8f;
+}
+.loading-animation:after {
+  content: "";
+  background: trasparent;
+  width: 140%;
+  height: 140%;
+  position: absolute;
+  border-radius: 100%;
+  top: -20%;
+  left: -20%;
+  opacity: 0.7;
+  box-shadow: -4px -5px 3px -3px rgba(245, 175, 0, 0.6);
+  -webkit-animation: rotate 2s linear infinite;
+  animation: rotate 2s linear infinite;
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
+/*# sourceMappingURL=main.64ff636c.chunk.css.map */
