@@ -1,14 +1,15 @@
 const ping = require("ping");
 
+let results = [];
 function pingSweep(start, end) {
-  let results = [];
 
   // Loop through the IP range
   for (let i = start; i <= end; i++) {
-    let ip = `192.168.0.${i}`; // Change this to match your network's IP range
+    let ip = `192.168.201.${i}`; // Change this to match your network's IP range
     ping.promise.probe(ip)
       .then((res) => {
         if (res.alive) {
+          console.log(ip)
           results.push(ip); 
         }
       })
