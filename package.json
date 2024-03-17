@@ -1,5 +1,15 @@
 {
   "dependencies": {
     "ping": "^0.4.4"
-  }
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "name": "nodejs",
+  "description": "important packages",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
 }
