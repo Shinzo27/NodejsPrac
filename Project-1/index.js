@@ -2,6 +2,10 @@ const express = require("express")
 const users = require("./MOCK_DATA.json")
 const app = express()
 const PORT = 8000
+const fs = require("fs")
+
+//plugin
+app.use(express.urlencoded({extended: false}))
 
 //Routes
 app.get("/api/users", (req, res)=>{
@@ -28,7 +32,12 @@ app.get("/api/users/:id", (req,res)=>{
 
 //
 app.post("/api/users", (req, res)=>{
-    res.json({status: "pending"})
+    const body = req.body
+    // console.log(body)
+    users.push({id: users.length + 1 , ...body})
+    fs.writeFile("./MOCK_DATA.json",JSON.stringify(users),(err, data)=>{
+        return res.json({status: "success", id: users.length + 1})
+    })
 })
 
 app.patch("/api/users/:id", (req, res)=>{
