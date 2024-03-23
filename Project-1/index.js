@@ -47,7 +47,13 @@ app.patch("/api/users/:id", (req, res)=>{
 
 app.delete("/api/users/:id", (req, res)=>{
     //Todo: delete the user
-    res.json({status: "pending"})
+    const id = Number(req.params.id)
+    const filterUser = users.filter((user)=>{
+        return user.id != id
+    })
+    fs.writeFile("./MOCK_DATA.json", JSON.stringify(filterUser), (err, data)=>{
+        return res.json({status: "Success"})
+    })
 })
 
 //shortcut
