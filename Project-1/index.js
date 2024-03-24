@@ -9,6 +9,7 @@ app.use(express.urlencoded({extended: false}))
 
 //Routes
 app.get("/api/users", (req, res)=>{
+    res.setHeader("MyName","Pratham Patel");
     return res.json(users);
 })
 
