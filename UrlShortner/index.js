@@ -13,18 +13,18 @@ app.use(express.json())
 app.use("/url", urlRoute)
 
 app.get("/:shortId", async (req, res) => {
-    const shortID = req.params.shortId
+    const shortId = req.params.shortId
     const entry = await URL.findOneAndUpdate(
     {
-        shortId: shortID 
+        shortId
     }, 
     { 
         $push: {
             visitHistory: {
                 timeStamp: Date.now()
-            }
-        }
-    })
+            },
+        },
+    });
     // res.send({ result: entry.redirectUrl})
     res.redirect(entry.redirectUrl)
 }
