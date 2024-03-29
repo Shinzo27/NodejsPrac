@@ -36,6 +36,7 @@ async function handleRedirect(req,res){
         },
     });
     // res.send({ result: entry.redirectUrl})
+    console.log(entry.redirectUrl)
     return res.redirect(entry.redirectUrl)
 }
 

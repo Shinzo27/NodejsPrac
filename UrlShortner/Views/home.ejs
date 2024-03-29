@@ -18,5 +18,28 @@
     <% if (locals.id) { %>
       <p>URL Generated : http://localhost:8001/url/<%= id %></p>
     <% } %>
+
+    <% if (locals.urls ) { %>
+        <table>
+            <thead>
+                <th>Serial Number</th>
+                <th>ShortID</th>
+                <th>Redirect</th>
+                <th>Clicks</th>
+                <th>Short Url</th>
+            </thead>
+            <tbody>
+                <% urls.forEach((url, index) => { %>
+                    <tr>
+                        <td><%= index + 1 %></td>
+                        <td><%= url.shortId %></td>
+                        <td><%= url.redirectUrl %></td>
+                        <td><%= url.visitHistory.length %></td>
+                        <td>http://localhost:8001/url/<%=url.shortId%></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } %>
 </body>
 </html>
