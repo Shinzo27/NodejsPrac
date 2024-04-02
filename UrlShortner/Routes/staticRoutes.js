@@ -5,7 +5,14 @@ const { restricTo } = require("../Middleware/auth")
 
 const router = express.Router()
 
-router.get("/",restricTo(["NORMAL"]), async (req,res)=> {
+router.get("/admin/urls", restricTo(["ADMIN"], async (req,res)=> {
+    const allUrls = await URL.find({})
+    return res.render("home", {
+        urls: allUrls
+    })
+}))
+
+router.get("/",restricTo(["NORMAL", "ADMIN"]), async (req,res)=> {
     const allUrls = await URL.find({ createdBy: req.user._id})
     return res.render("home", {
         urls: allUrls

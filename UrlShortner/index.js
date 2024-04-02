@@ -23,9 +23,10 @@ app.use(express.urlencoded({extended: false}))
 app.use(cookieParser())
 app.use(checkForAuthentication)
 
-app.use("/user", restricTo(['NORMAL']), userRoute)
+app.use("/url", restricTo(['NORMAL', 'ADMIN']), urlRoute)
+app.use("/user", userRoute)
 app.use('/', staticRoute)
-app.use("/url", urlRoute)
+
 app.use("/:shortId", urlRoute)
 
 app.listen(PORT, ()=> console.log("Server Started"))
