@@ -11,7 +11,6 @@ const urlRoute = require("./Routes/url")
 const staticRoute = require('./Routes/staticRoutes')
 const userRoute = require("./Routes/user")
 
-
 connectToMongoDB("mongodb://127.0.0.1:27017/short-url")
 .then(()=>console.log("MongoDB connected"))
 
