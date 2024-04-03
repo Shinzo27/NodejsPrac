@@ -16,7 +16,7 @@ client.on('messageCreate', message=>{
     })
 })
 
-client.login("MTIyNDc2NTQyMzAzMjIwNTQxNQ.Gv_RuA.JYg8BHweULT419GbHWfSyH1LElPXwfULYteYu4")
+client.login("token")
 
 client.on('interactionCreate', (interaction)=>{
     console.log(interaction)
