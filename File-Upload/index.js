@@ -1,6 +1,7 @@
 const path = require('path')
 const express = require("express")
 const multer = require("multer")
+const staticRoutes = require("./Routes/staticRoutes")
 
 const app = express()
 const PORT = 8000
@@ -16,9 +17,7 @@ app.set("views", path.resolve('./Views'))
 
 app.use(express.urlencoded({ extended: false }))
 
-app.get("/",(req, res)=>{
-    return res.render("Homepage")
-})
+app.get("/",staticRoutes)
 
 app.use("/upload", urlRoute)
 

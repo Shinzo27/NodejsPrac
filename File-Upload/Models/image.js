@@ -4,12 +4,10 @@ const imageSchema = mongoose.Schema({
     filename: {
         type: String,
         require: true,
-        unique: true
     },
     path: {
         type: String,
         require: true,
-        unique: true
     }
 }, { timestamps: true});
 
