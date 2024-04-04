@@ -15,6 +15,7 @@ connectToMongoDB("mongodb://127.0.0.1:27017/FileUpload")
 app.set("view engine", "ejs");
 app.set("views", path.resolve('./Views'))
 
+app.use(express.static('/uploads'));
 app.use(express.urlencoded({ extended: false }))
 
 app.get("/",staticRoutes)
