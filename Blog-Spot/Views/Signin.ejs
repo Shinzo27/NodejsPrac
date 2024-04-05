@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Sign Up</title>
+    <title>Sign In</title>
     <%- include('./Partials/Head') %>
 </head>
 <body>
     <%- include('./Partials/Navbar') %>
     <div class="container mt-4">
-        <form action="/user/signup" method="post">
-            <div class="mb-3">
-                <label for="exampleInputUsername" class="form-label">Username</label>
-                <input type="text" name="fullName" class="form-control" id="exampleInputUsername">
-              </div>
+        <form action="/user/signin" method="post">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Email address</label>
               <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -21,7 +17,7 @@
               <label for="exampleInputPassword1" class="form-label">Password</label>
               <input type="password" name="password" class="form-control" id="exampleInputPassword1">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Sign In</button>
           </form>
     </div>
     <%- include('./Partials/Scripts') %>
