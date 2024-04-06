@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express')
 const path = require('path')
 const userRoute = require('./Routes/User')
@@ -9,10 +11,10 @@ const { checkForAuthentication } = require('./Middleware/Auth')
 const Blogs = require('./Model/Blog')
 const Blog = require('./Model/Blog')
 
-mongoose.connect('mongodb://127.0.0.1:27017/BlogSpot').then(()=>console.log("MongoDB Connected"))
+mongoose.connect(process.env.MONGO_URL).then(()=>console.log("MongoDB Connected"))
 
 const app = express()
-const PORT = 8000
+const PORT = process.env.PORT || 8000
 
 app.set('view engine', 'ejs')
 app.set('views', path.resolve('./Views'))
