@@ -20,7 +20,7 @@ app.set('views', path.resolve('./Views'))
 app.use(express.urlencoded({extended: false}))
 app.use(cookieParser());
 app.use(checkForAuthentication("token"))
-app.use(express.static(path.resolve('./public')))
+app.use(express.static(path.resolve('./Public')))
 
 app.get("/", async (req, res)=>{
     const allBlog = await Blog.find({});
