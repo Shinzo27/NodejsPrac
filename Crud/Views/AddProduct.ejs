@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home Page</title>
+    <%- include('./Partials/Head') %>
+</head>
+<body>
+    <%- include('./Partials/Navbar') %>
+    <div class="container mt-3">
+        <h1>Add Products</h1>
+        <form method="post" action="/product/addProduct" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="productName" class="form-label">Product Name</label>
+              <input type="text" class="form-control" id="productName" name="productName">
+            </div>
+            <div class="mb-3">
+              <label for="price" class="form-label">Price</label>
+              <input type="text" class="form-control" id="price" name="Price">
+            </div>
+            <div class="mb-3">
+                <label for="pimage" class="form-label">Product Image</label>
+                <input type="file" class="form-control" id="pimage" name="productImgUrl">
+            </div>
+            <button type="submit" class="btn btn-primary">Add Product</button>
+        </form>
+    </div>    
+    <%- include('./Partials/Script') %>
+</body>
+</html>
