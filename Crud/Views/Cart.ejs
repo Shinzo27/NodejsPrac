@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cart</title>
+    <%- include('./Partials/Head') %>
+</head>
+<body>
+    <%- include('./Partials/Navbar') %>
+    <div class="container row row-cols-4 m-3">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+            <% if (locals.items) { %>
+                <% locals.items.forEach(item => { %>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td><%= item.productId %></td>
+                        <td><%= item.Quantity %></td>
+                        <td><a class="btn btn-primary btn-sm" href="/addToCart/removeItem/<%= item.productId %>">Remove</a></td>
+                    </tr>
+                <% }) %>
+            <% } else { %>
+                <h1>No Items Found</h1>
+            <% } %>
+            </tbody>
+          </table>
+    </div>
+    <%- include('./Partials/Script') %>
+</body>
+</html>

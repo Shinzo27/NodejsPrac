@@ -17,7 +17,9 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 router.get('/addProduct', (req,res)=>{
-    return res.render("AddProduct");
+    return res.render("AddProduct", {
+        user: req.user,
+    });
 })
 
 router.post('/addProduct', upload.single('productImgUrl'), async (req,res)=>{
