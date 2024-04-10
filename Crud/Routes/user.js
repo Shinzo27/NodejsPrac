@@ -1,5 +1,6 @@
 const express = require("express")
-const User = require("../Models/User")
+const User = require("../Models/User");
+const { setUser } = require("../Services/auth");
 
 const router = express.Router();
 
@@ -13,14 +14,14 @@ router.get("/register",(req, res)=>{
 
 router.post('/login', async (req,res)=>{
     const { email, password } = req.body;
-    console.log(email, password)
     const user = await User.findOne({
         Email: email,
         Password: password,
     });
-    console.log(user)
     if(!user) return res.render('login')
 
+    const token = setUser(user)
+    res.cookie('token', token)
     return res.redirect("/");
 })
 
@@ -34,4 +35,8 @@ router.post('/register',async (req,res)=>{
     res.redirect('/');
 })
 
-module.exports = router;    
+router.get('/logout', (req, res)=>{
+    res.clearCookie('token').redirect('/');
+})
+
+module.exports = router;
