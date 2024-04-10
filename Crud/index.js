@@ -5,6 +5,7 @@ const userRoute = require('./Routes/user')
 const { checkForAuthentication } = require("./Middleware/auth")
 const cookieParser = require("cookie-parser")
 const productRouter = require("./Routes/product")
+const Product = require('./Models/Product')
 
 const PORT = 8000;
 const app = express()
@@ -20,9 +21,11 @@ app.use(express.static(path.resolve('./Public')));
 app.set("view engine", "ejs")
 app.set("views", path.resolve('./Views'))
 
-app.get('/',(req,res)=>{
+app.get('/',async (req,res)=>{
+    const allProducts = await Product.find({});
     return res.render("index",{
-        user: req.user
+        user: req.user,
+        products: allProducts,
     })
 })
 

@@ -7,8 +7,6 @@ const blogRoute = require('./Routes/Blog')
 const mongoose = require('mongoose')
 const cookieParser = require("cookie-parser")
 const { checkForAuthentication } = require('./Middleware/Auth')
-
-const Blogs = require('./Model/Blog')
 const Blog = require('./Model/Blog')
 
 mongoose.connect(process.env.MONGO_URL).then(()=>console.log("MongoDB Connected"))
