@@ -6,6 +6,7 @@ const { checkForAuthentication } = require("./Middleware/auth")
 const cookieParser = require("cookie-parser")
 const productRouter = require("./Routes/product")
 const Product = require('./Models/Product')
+const cartRouter = require('./Routes/cart')
 
 const PORT = 8000;
 const app = express()
@@ -31,5 +32,6 @@ app.get('/',async (req,res)=>{
 
 app.use('/user', userRoute)
 app.use('/product', productRouter)
+app.use('/addToCart', cartRouter)
 
 app.listen(PORT, ()=>console.log("Server Started"));

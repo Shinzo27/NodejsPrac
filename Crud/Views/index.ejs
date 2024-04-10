@@ -13,7 +13,7 @@
           <div class="card-body">
             <h5 class="card-title"><%= product.productName %></h5>
             <p class="card-text"><%= product.Price %></p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
+            <a href="/addToCart/<%= product._id %>" class="btn btn-primary">Add to cart</a>
           </div>
         </div>
       <% }) %>
