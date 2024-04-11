@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.get('/cart', async (req,res)=>{
     const cartItems = await Cart.find({userId: req.user._id})
+    if(cartItems.length === 0 ) return res.render("Cart",{items: null, user: req.user})
     return res.render("Cart", {
         items: cartItems,
         user: req.user,
@@ -30,8 +31,10 @@ router.get('/:id',async (req, res)=>{
 })
 
 router.get('/removeItem/:id',async (req, res)=>{
-    const remove = await Cart.deleteMany({ productId: req.params.id})
-    return res.render('Cart')
+    // console.log(req.params.id)
+    const remove = await Cart.deleteOne({ productId: req.params.id})
+    
+    return res.redirect('/addToCart/cart')
 })
 
 module.exports = router
