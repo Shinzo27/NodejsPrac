@@ -24,7 +24,6 @@ router.get('/addProduct', (req,res)=>{
 
 router.post('/addProduct', upload.single('productImgUrl'), async (req,res)=>{
     const { productName, Price } = req.body;
-    console.log(req.file)
     const product = await Product.create({
         productName,
         Price,

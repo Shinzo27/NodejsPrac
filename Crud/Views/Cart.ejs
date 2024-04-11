@@ -13,6 +13,8 @@
                 <th scope="col">#</th>
                 <th scope="col">Product Name</th>
                 <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total</th>
                 <th scope="col">Delete</th>
               </tr>
             </thead>
@@ -21,9 +23,12 @@
                 <% locals.items.forEach(item => { %>
                     <tr>
                         <th scope="row">1</th>
-                        <td><%= item.productId %></td>
+                        <td><%= item.productName %></td>
                         <td><%= item.Quantity %></td>
-                        <td><a class="btn btn-primary btn-sm" href="/addToCart/removeItem/<%= item.productId %>">Remove</a></td>
+                        <td><%= item.productPrice %></td>
+                        <td><%= item.Quantity * item.productPrice %></td>
+                        <td><a class="btn btn-primary btn-sm" href="/addToCart/removeItem/<%= item.productName %>"> + </a></td>
+                        <td><a class="btn btn-danger btn-sm" href="/addToCart/removeItem/<%= item.productName %>">Remove</a></td>
                     </tr>
                 <% }) %>
             <% } else { %>

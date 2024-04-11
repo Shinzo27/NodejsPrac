@@ -6,15 +6,19 @@ const CartSchema = new Schema({
         ref: "User",
         require: true,
     },
-    productId: {
+    productName: {
         type: String,
         require: true,
         unique: true
     },
+    productPrice: {
+        type: String,
+        require: true,
+    },
     Quantity: {
         type: String,
         require: true
-    }
+    },
 }, {timestamps: true})
 
 const Cart = model("Cart", CartSchema);

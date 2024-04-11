@@ -7,6 +7,7 @@ const cookieParser = require("cookie-parser")
 const productRouter = require("./Routes/product")
 const Product = require('./Models/Product')
 const cartRouter = require('./Routes/cart')
+const nocache = require("nocache");
 
 const PORT = 8000;
 const app = express()
@@ -18,6 +19,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser());
 app.use(checkForAuthentication("token")) 
 app.use(express.static(path.resolve('./Public')));
+app.use(nocache())
 
 app.set("view engine", "ejs")
 app.set("views", path.resolve('./Views'))
