@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('./Partials/Head') %>
+</head>
+<body>
+    <section class="header">
+
+        <img src="images\logo.png" class="logo">
+  
+        <nav class="navbar">
+           <a href="#home">home</a>
+           <a href="Product.html">shop</a>
+           <a href="gallery.html">gallery</a>
+           <a href="#about">about</a>
+           <a href="#food">expertise</a>
+           <a href="#blogs">reviews</a>
+           <a href="#footer">Contact us</a>
+           <a href="Login.html">Login</a>
+           <a href="cart.html">Cart</a>
+        </nav>
+  
+        <div id="menu-btn" class="fas fa-bars"></div>
+  
+     </section>
+  
+     <!-- header section ends    -->
+  
+     <!-- home section starts  -->
+  
+     <section class="home" id="home">
+  
+        <div class="swiper home-slider">
+  
+           <div class="swiper-wrapper">
+  
+              <div class="swiper-slide slide" style="background: url(images/home-slide-1.jpg) no-repeat;">
+                 <div class="content">
+                    <span>Healthy Dryfruit</span>
+                    <h3>Wealthy Life</h3>
+                    <a href="Product.html" class="btn">get started</a>
+                 </div>
+              </div>
+  
+              <div class="swiper-slide slide" style="background: url(images/home-slide-2.jpg) no-repeat;">
+                 <div class="content">
+                    <span>Need Spices?</span>
+                    <h3>We have it too!</h3>
+                    <a href="Product.html" class="btn">get started</a>
+                 </div>
+              </div>
+  
+              <div class="swiper-slide slide" style="background: url(images/home-slide-3.jpg) no-repeat;">
+                 <div class="content">
+                    <span>Morning Breakfast?</span>
+                    <h3>Have A Namkeen!</h3>
+                    <a href="Product.html" class="btn">get started</a>
+                 </div>
+              </div>
+  
+           </div>
+  
+           <div class="swiper-button-next"></div>
+           <div class="swiper-button-prev"></div>
+  
+        </div>
+  
+     </section>
+     
+    <%- include('./Partials/Script') %>
+</body>
+</html>
