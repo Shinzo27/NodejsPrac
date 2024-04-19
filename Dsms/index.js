@@ -8,10 +8,15 @@ const PORT = 8000
 
 app.set("view engine", "ejs")
 app.set("Views", path.resolve('./Views'))
+app.use(express.urlencoded({ extended: false }))
 
-app.use(express.static(path.resolve('./Public')))
+app.use(express.static(path.join(__dirname,"Public")));
 
 app.use('/user', userRoute)
+
+app.get("/login",(req,res)=>{
+    return res.render("Login")
+})
 
 app.get("/",(req,res)=>{
     return res.render("Index")
