@@ -31,4 +31,20 @@ app.post('/create', async(req,res)=>{
     if(createNote) return res.redirect('/')
 })
 
+app.get('/note/:id', async (req, res)=>{
+    const id = req.params.id;
+    const note = await Notes.findById({ _id: id})
+    if(!note) return res.redirect('/');
+    return res.render("note", {
+        note
+    });
+})
+
+app.get('/delete/:id', async (req, res)=>{
+    const id = req.params.id;
+    const note = await Notes.deleteOne({ _id: id})
+    if(!note) return res.redirect('/');
+    return res.redirect("/");
+})
+
 app.listen(PORT, ()=>console.log("Server Started"))
