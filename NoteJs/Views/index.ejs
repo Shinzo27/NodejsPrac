@@ -20,7 +20,7 @@
             <% if(notes){ %>
                 <% notes.forEach(note => { %>
                     <div class="task rounded-md w-72 px-3 py-4 bg-zinc-800">
-                        <div class="flex flex-wrap gap-4">
+                        <div class="flex flex-wrap justify-between gap-4">
                             <h1 class="text-white text-2xl tracking-tighter"><%= note.title %></h1>
                             <a class="text-white bg-red-700 rounded-lg p-2 text-center inline-flex items-center" href="/delete/<%= note._id %>">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256">

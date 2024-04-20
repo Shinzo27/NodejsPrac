@@ -2,6 +2,7 @@ const express = require('express')
 const path = require("path")
 const Notes = require("./Model/Note")
 const mongoose = require("mongoose")
+const User = require("./Model/User")
 
 const app = express()
 const PORT = 8000
@@ -14,12 +15,35 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'Public')))
 app.use(express.json());
 
-
-app.get('/', async(req,res)=>{
+app.get('/index', async(req,res)=>{
     const notes = await Notes.find({})
     return res.render("index", {
         notes
     })
+})
+
+app.get('/', (req,res)=>{
+    return res.render("login")
+})
+
+app.post('/register', async(req,res)=>{
+    const { email, password } = req.body;
+    const newUser = await User.create({
+        email,
+        password
+    })
+    if(!newUser) return res.redirect('login')
+    return res.redirect('index')
+})
+
+app.post('/login', async(req,res)=>{
+    const { email, password } = req.body;
+    const currentUser = await User.findOne({
+        email: email,
+        password: password
+    })
+    if(!currentUser) return res.render('register')
+    return res.redirect('/index')
 })
 
 app.post('/create', async(req,res)=>{
