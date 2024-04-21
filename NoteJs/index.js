@@ -26,6 +26,10 @@ app.get('/', (req,res)=>{
     return res.render("login")
 })
 
+app.get('/register', (req,res)=>{
+    return res.render("register")
+})
+
 app.post('/register', async(req,res)=>{
     const { email, password } = req.body;
     const newUser = await User.create({
