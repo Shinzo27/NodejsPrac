@@ -40,6 +40,24 @@ app.post('/register', async(req,res)=>{
     return res.redirect('index')
 })
 
+app.get('/edit/:id', async(req,res)=>{
+    const id = req.params.id;
+    const currNote = await Notes.findById({
+        _id: id
+    })
+    if(!currNote) return res.redirect('/index')
+    return res.render('edit', {
+        note: currNote
+    })
+})
+
+app.post('/edit/:id', async (req,res)=>{
+    const id = req.params.id
+    const { title, data } = req.body;
+    const update = await Notes.findByIdAndUpdate({ _id: id},{title, data})
+    return res.redirect('/index')
+})
+
 app.post('/login', async(req,res)=>{
     const { email, password } = req.body;
     const currentUser = await User.findOne({
