@@ -5,6 +5,8 @@ const cookieParser = require('cookie-parser')
 const fileUpload = require('express-fileupload')
 const mongoose = require('mongoose')
 const cloudinary = require('cloudinary')
+const messageRouter = require('./Routes/messageRoute')
+const { errorMiddleware } = require('./Middlewares/errorMiddleware')
 
 const app = express()
 const PORT = 8000
@@ -37,6 +39,10 @@ app.use(
         tempFileDir: "/tmp/",
     })
 )
+
+app.use("/api/v1/message", messageRouter)
+
+app.use(errorMiddleware)
 
 app.listen(process.env.PORT, ()=>{
     console.log("Server Started")
