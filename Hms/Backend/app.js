@@ -6,6 +6,7 @@ const fileUpload = require('express-fileupload')
 const mongoose = require('mongoose')
 const cloudinary = require('cloudinary')
 const messageRouter = require('./Routes/messageRoute')
+const userRouter = require('./Routes/userRouter')
 const { errorMiddleware } = require('./Middlewares/errorMiddleware')
 
 const app = express()
@@ -41,6 +42,7 @@ app.use(
 )
 
 app.use("/api/v1/message", messageRouter)
+app.use("/api/v1/user", userRouter)
 
 app.use(errorMiddleware)
 
