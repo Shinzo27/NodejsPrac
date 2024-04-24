@@ -31,6 +31,51 @@ const postAppointment = catchAsyncError(async(req,res,next)=>{
     })
 })
 
+const getAllAppointment = catchAsyncError(async(req,res,next)=>{
+    const appointments = await Appointment.find({})
+    res.status(200).json({
+        success: true,
+        appointments 
+    })
+})
+
+const updateAppointment = catchAsyncError(async(req,res,next)=>{
+    const { id } = req.params
+
+    let appointment = await Appointment.findById(id);
+
+    if(!appointment) return next(new ErrorHandler("Appointment not found", 404))
+
+    appointment = await Appointment.findByIdAndUpdate(id, req.body, {
+        new: true,
+        runValidators: true,
+        useFindAndModify: false,
+    })
+    res.status(200).json({
+        success: true,
+        message: "Appointment Status Updated",
+        appointment,
+    })
+})
+
+const deleteAppointment = catchAsyncError(async(req,res,next)=>{
+    const { id } = req.params
+
+    let appointment = await Appointment.findById(id);
+
+    if(!appointment) return next(new ErrorHandler("Appointment not found", 404))
+
+    await appointment.deleteOne();
+
+    res.status(200).json({
+        success: true,
+        message: "Appointment Deleted Successfully"
+    })
+})
+
 module.exports = {
-    postAppointment
+    postAppointment,
+    getAllAppointment,
+    updateAppointment,
+    deleteAppointment
 }
