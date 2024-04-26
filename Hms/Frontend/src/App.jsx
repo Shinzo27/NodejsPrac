@@ -16,19 +16,24 @@ import axios from 'axios'
 const App = () => {
   const { isAuthenticated, setIsAuthenticated, setUser } = useContext(Context)
 
-  useEffect(()=>{
+  useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/v1/user/patient/me", {withCredentials: true})
-        setIsAuthenticated(true)
-        setUser(response.data.user)
+        const response = await axios.get(
+          "http://localhost:8000/api/v1/user/patient/me",
+          {
+            withCredentials: true,
+          }
+        );
+        setIsAuthenticated(true);
+        setUser(response.data.user);
       } catch (error) {
-        setIsAuthenticated(false)
-        setUser({})
+        setIsAuthenticated(false);
+        setUser({});
       }
-    }
-    fetchUser();
-  }, [ isAuthenticated ])
+    };
+    fetchUser()
+  }, [isAuthenticated]);
 
   return (
     <>
