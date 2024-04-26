@@ -1,5 +1,5 @@
-import React from 'react'
 import './App.css'
+import React, { useContext, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Home from './pages/Home'
 import Aboutus from './pages/Aboutus'
@@ -9,11 +9,29 @@ import Register from './pages/Register'
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Navbar from './components/Navbar'
+import { Context } from './main'
+import axios from 'axios'
 
 const App = () => {
+  const { isAuthenticated, setIsAuthenticated, setUser } = useContext(Context)
+  useEffect(()=>{
+    const fetchUser = async () => {
+      try {
+        const response = await axios.get("http://localhost:8000/api/v1/user/patient/me", {withCredentials: true})
+        setIsAuthenticated(true)
+        setUser(response.data.user)
+      } catch (error) {
+        setIsAuthenticated(false)
+        setUser({})
+      }
+    }
+  })
+
   return (
     <>
       <Router>
+        <Navbar/>
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/appointment' element={<Appointment/>}/>
@@ -21,8 +39,8 @@ const App = () => {
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>
         </Routes>
+        <ToastContainer position='top-center'/>
       </Router>
-      <ToastContainer position='top-center'/>
     </>
   )
 }
