@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGO_URI).then(console.log("DB Connected"))
 app.use(
     cors({
         origin: [process.env.FRONTEND_URL, process.env.DASHBOARD_URL],
-        methods: ['get','post','put','delete'],
+        methods: ['GET','POST','PUT','DELETE'],
         credentials: true
     })
 );
