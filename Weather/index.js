@@ -4,7 +4,9 @@ const mongoose = require('mongoose')
 const path = require('path')
 const jwt = require('jsonwebtoken')
 const cookieParser = require('cookie-parser')
+const axios = require('axios')
 const secret = "Shinzo@27"
+
 
 const app = express()
 
@@ -31,10 +33,37 @@ app.get('/home', (req,res)=>{
     const tokenCookie = req.cookies?.token
     if(!tokenCookie) return res.redirect('/')
     const user = jwt.verify(tokenCookie, secret)
-    console.log(user)
+    req.user = user
     res.render('index', {
-        user
+        user,
+        weather: null,
+        error: null
     })
+})
+
+app.post('/weather', async(req,res)=>{
+    const { city } = req.body
+    const apiKey = "5fa3b1d147956938501425f2e8bc2990"
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
+    let weather
+    let error = null
+    try {
+        const response = await axios.get(apiUrl)
+        weather = response.data
+        console.log(weather)
+    } catch (error) {
+        weather = null,
+        error = "Error, Enter Correct City"
+    }
+    console.log(weather)
+    console.log("error" , error)
+    const user = req.user
+    console.log(user)
+    // return res.render('index', {
+    //     weather,
+    //     error,
+    //     user
+    // })
 })
 
 app.listen(PORT, ()=>{
