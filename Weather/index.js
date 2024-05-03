@@ -5,8 +5,8 @@ const path = require('path')
 const jwt = require('jsonwebtoken')
 const cookieParser = require('cookie-parser')
 const axios = require('axios')
-const secret = "Shinzo@27"
-
+const { checkForAuthentication } = require('./Middleware/auth')
+const secret = 'Shinzo@27'
 
 const app = express()
 
@@ -14,10 +14,12 @@ const PORT = 8000
 
 mongoose.connect("mongodb://127.0.0.1:27017/Weather").then(()=>{console.log("MongoDB Connected")})
 
-app.use(express.urlencoded({ extended: true }))
-app.use(cookieParser())
 app.set('view engine', 'ejs')
 app.set('views', path.resolve('./Views'))
+
+app.use(express.urlencoded({ extended: true }))
+app.use(cookieParser())
+app.use(checkForAuthentication("token"))
 
 app.use('/api/v1/user', userRoute)
 
@@ -46,24 +48,20 @@ app.post('/weather', async(req,res)=>{
     const apiKey = "5fa3b1d147956938501425f2e8bc2990"
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
     let weather
-    let error = null
+    var error = null
     try {
         const response = await axios.get(apiUrl)
-        weather = response.data
-        console.log(weather)
-    } catch (error) {
+        weather = response
+    } catch (e) {
         weather = null,
         error = "Error, Enter Correct City"
     }
-    console.log(weather)
-    console.log("error" , error)
     const user = req.user
-    console.log(user)
-    // return res.render('index', {
-    //     weather,
-    //     error,
-    //     user
-    // })
+    return res.render('index', {
+        weather,
+        error,
+        user
+    })
 })
 
 app.listen(PORT, ()=>{

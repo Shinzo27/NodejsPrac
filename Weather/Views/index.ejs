@@ -21,22 +21,23 @@
             </form>
         </div>
         <div class="flex flex-wrap justify-center align-center pt-10 m-10">
-            <div class="w-64 mb-10 transition duration-500 ease-in-out transform rounded-lg hover:scale-105 cursor-pointer border b-gray-400 rounded flex flex-col justify-center items-center text-center p-6 bg-zinc-800">
-                <div class="text-md font-bold flex flex-col text-white"><span class="uppercase">Today</span> <span class="font-normal text-white text-sm">October 22</span></div>
-                <div class="w-32 h-32 flex items-center justify-center">
-                    <svg width="95" height="72" viewBox="0 0 95 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M60.8668 35.1414C53.5715 25.5657 54.0933 14.2194 60.8836 5.28154C54.1775 5.27389 47.3805 6.53432 41.1524 9.26184C27.7334 15.1379 20.6368 26.0786 21.5525 37.055C24.7339 37.1341 27.7435 37.9914 30.1674 39.5274C32.46 38.5604 34.9984 38.0629 37.6445 38.0629C44.6906 38.0629 50.784 41.6579 52.6861 46.6843C57.6551 47.8452 61.1597 51.3101 61.1597 55.395C61.1597 59.6611 57.2646 63.228 52.0364 64.241C61.4122 65.8765 71.5925 64.9579 80.5845 61.0261C86.8126 58.3011 91.6503 54.4714 94.9966 50.0624C81.3891 50.0446 68.162 44.7146 60.8668 35.1414Z" fill="white"></path>
-                        <path d="M57.8571 55.3899C57.8571 51.9276 54.3526 49.1158 49.8986 48.802C49.1277 44.1634 43.9668 40.5633 37.6445 40.5633C34.6214 40.5633 31.8945 41.4078 29.7399 42.7627C27.7166 40.8031 24.6026 39.5198 21.0677 39.5198C15.7856 39.5198 11.389 42.3289 10.2881 46.077C4.54481 46.3807 0 49.968 0 54.3999C0 59.0232 4.94879 62.7713 11.0523 62.7713C12.3484 62.7713 13.5806 62.5723 14.7353 62.261C16.7485 64.3532 19.9837 65.7285 23.6599 65.7285C25.9088 65.7285 27.996 65.2131 29.7433 64.3379C31.7362 65.8025 34.4429 66.7159 37.4425 66.7159C41.856 66.7159 45.6333 64.7385 47.4041 61.9013C47.9461 61.9804 48.5015 62.0339 49.0772 62.0339C53.925 62.0365 57.8571 59.0589 57.8571 55.3899Z" fill="white"></path>
-                        <path d="M81.9514 38.8487L83.5269 36.2207L87.2738 35.7181L84.4662 33.7662L84.988 30.906L81.6787 32.3323L78.2549 31.0718L79.0191 33.9014L76.3798 35.9783L80.1604 36.3049L81.9514 38.8487Z" fill="white"></path>
-                        <path d="M6.28867 31.7862L8.98189 30.7376L11.6482 31.822L11.1634 29.5588L13.3483 27.9718L10.3588 27.6197L9.03913 25.5555L7.67905 27.6069L4.67947 27.9106L6.83068 29.5282L6.28867 31.7862Z" fill="white"></path>
-                        <path d="M67.4618 26.6731L68.6906 28.4157L69.7713 26.6119L72.3399 26.27L70.4143 24.933L70.7745 22.9734L68.5021 23.9481L66.1523 23.0832L66.6774 25.0248L64.8662 26.446L67.4618 26.6731Z" fill="white"></path>
-                        <path d="M79.8372 21.4936L80.5913 22.5652L81.2545 21.4604L82.8334 21.2461L81.6517 20.4245L81.8672 19.2253L80.4734 19.8275L79.0427 19.2942L79.3558 20.4832L78.2448 21.3558L79.8372 21.4936Z" fill="white"></path>
-                        <path d="M23.0203 14.2857L23.7744 15.3573L24.4376 14.25L26.0165 14.0357L24.8349 13.2141L25.0537 12.0149L23.66 12.6145L22.2224 12.0838L22.5423 13.2702L21.4279 14.1454L23.0203 14.2857Z" fill="white"></path>
-                    </svg>
+            <% if (error) { %>
+                <div>
+                    <p class="text-center text-2xl text-red-700 font-bold">Please Enter Correct City Name!</p>
                 </div>
-                <p class="text-white mb-2">Partly cloud</p>
-                <div class="text-3xl font-bold text-white mb-6">32º<span class="font-normal text-white mx-1">/</span>20º</div>
+            <% } else if(weather) { %><%= console.log(weather) %>
+            <div class="w-64 mb-10 transition duration-500 ease-in-out transform rounded-lg hover:scale-105 cursor-pointer border b-gray-400 rounded flex flex-col justify-center items-center text-center p-6 bg-zinc-800">
+                <div class="text-md font-bold flex flex-col text-white"><span class="uppercase">Today</span> <span class="font-normal text-white text-sm"><%= weather.data.name %></span></div>
+                <div class="w-32 h-32 flex items-center justify-center">
+                    <img width="96" height="96" src="https://img.icons8.com/neon/96/cloud.png" alt="cloud"/>
+                </div>
+                <p class="text-white mb-2"></p>
+                <div class="text-3xl font-bold text-white mb-6"><%= weather.data.main.temp / 10 %> º </div>
+                <div class="text-l font-bold text-white mb-6">Minimum : <%= weather.data.main.temp_min / 10 %> º </div>
+                <div class="text-l font-bold text-white mb-6">Maximum : <%= weather.data.main.temp_max / 10 %> º </div>
+                <div class="text-l font-bold text-white mb-6">Humidity : <%= weather.data.main.humidity / 10 %> º </div>
             </div>
+            <% } %>
         </div>
         <div class="flex flex-wrap justify-center align-center ">
             <button class="mt-5 rounded-md bg-red-700 px-3 py-2"><a href="/api/v1/user/logout">Logout</a></button>
