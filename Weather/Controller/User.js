@@ -8,6 +8,13 @@ const router = express.Router()
 
 router.post('/register', async(req,res)=>{
     const { name, email, password } = req.body
+    //cheeck mail already exist
+    const ifExist = await User.findOne({
+        email
+    })
+    if(ifExist) return res.render("register", {
+        error: "User Already Exist With This Email!"
+    })
     const register = await User.create({
         name,
         email,
@@ -15,7 +22,7 @@ router.post('/register', async(req,res)=>{
     })
     const token = jwt.sign({
         _id: register._id,
-        name: login.name,
+        name: register.name,
         email: register.email,
     }, secret)
     
@@ -29,9 +36,8 @@ router.post('/login', async(req,res)=>{
         email, password
     })
 
-    if(!login) return res.status(404).json({
-        success: false,
-        message: "User Not Found"
+    if(!login) return res.render('login', {
+        error: "Invalid Credentials"
     })
 
     const token = jwt.sign({

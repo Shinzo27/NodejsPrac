@@ -32,10 +32,10 @@
                     <img width="96" height="96" src="https://img.icons8.com/neon/96/cloud.png" alt="cloud"/>
                 </div>
                 <p class="text-white mb-2"></p>
-                <div class="text-3xl font-bold text-white mb-6"><%= weather.data.main.temp / 10 %> º </div>
-                <div class="text-l font-bold text-white mb-6">Minimum : <%= weather.data.main.temp_min / 10 %> º </div>
-                <div class="text-l font-bold text-white mb-6">Maximum : <%= weather.data.main.temp_max / 10 %> º </div>
-                <div class="text-l font-bold text-white mb-6">Humidity : <%= weather.data.main.humidity / 10 %> º </div>
+                <div class="text-3xl font-bold text-white mb-6"><%= (weather.data.main.temp / 10).toFixed(2) %> º </div>
+                <div class="text-l font-bold text-white mb-6">Minimum : <%= (weather.data.main.temp_min / 10).toFixed(2) %> º </div>
+                <div class="text-l font-bold text-white mb-6">Maximum : <%= (weather.data.main.temp_max / 10).toFixed(2) %> º </div>
+                <div class="text-l font-bold text-white mb-6">Humidity : <%= (weather.data.main.humidity / 10).toFixed(2) %> º </div>
             </div>
             <% } %>
         </div>

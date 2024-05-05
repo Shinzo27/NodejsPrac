@@ -24,11 +24,15 @@ app.use(checkForAuthentication("token"))
 app.use('/api/v1/user', userRoute)
 
 app.get('/',(req,res)=>{
-    res.render("login")
+    res.render("login", {
+        error: null
+    })
 })
 
 app.get('/register', (req,res)=>{
-    res.render("register")
+    res.render("register", {
+        error: null
+    })
 })
 
 app.get('/home', (req,res)=>{
