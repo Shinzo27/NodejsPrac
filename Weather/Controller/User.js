@@ -8,10 +8,14 @@ const router = express.Router()
 
 router.post('/register', async(req,res)=>{
     const { name, email, password } = req.body
+
+    if(!name || !email || !password ) return res.render("register", { error: "Enter All Details" })
+
     //cheeck mail already exist
     const ifExist = await User.findOne({
         email
     })
+
     if(ifExist) return res.render("register", {
         error: "User Already Exist With This Email!"
     })
@@ -31,7 +35,11 @@ router.post('/register', async(req,res)=>{
 
 router.post('/login', async(req,res)=>{
     const { email, password } = req.body
-    // if(!email || !password ) return res.send("Enter All Details")
+
+    if(!email || !password ) return res.render("login", {
+        error: "Enter All Details!"
+    })
+
     const login = await User.findOne({
         email, password
     })
