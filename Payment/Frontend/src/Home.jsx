@@ -8,12 +8,11 @@ const Home = () => {
   const checkoutHandler = async (amount) => {
 
     // const { data: { key } } = await axios.get("http://www.localhost:8000/api/getkey")
-    const key = 'KRGpin9ztsG3ZYw6rpTk0gSt'
+    const key = 'rzp_test_0kGZM6ZTG0E0Le'
 
     const { data: { order } } = await axios.post("http://localhost:8000/api/v1/payment/checkout", {
         amount
     })
-    console.log(order.amount);
 
     const options = {
         key,
