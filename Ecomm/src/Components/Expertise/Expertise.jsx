@@ -38,6 +38,7 @@ const Expertise = () => {
     pauseOnFocus: true
   };
   return (
+        <>
     <div className='flex justify-center items-center'>
       <Slider {...settings}>
                 {
@@ -59,7 +60,6 @@ const Expertise = () => {
                 }
             </Slider>
     </div>
-    <>
     </>
   )
 }
