@@ -43,29 +43,29 @@ const Expertise = () => {
           <h1 className='text-4xl font-semibold font-Dosis'>Our Expertise!</h1>
         </div>
         <div className='flex items-center justify-center gap-16 font-Dosis font-semibold'>
-          <div className='border border-black p-4 rounded-lg'>
+          <div className='p-8 rounded-lg bg-stone-200 text-black'>
             <div className='flex justify-center items-center'>
                 <img src={foodImg1} alt="" className=' w-52 rounded-lg'/>
             </div>
             <div className='text-lg text-clip w-60 pt-4 flex justify-center items-center'>
                 Cashew
             </div>
-            <div className='text-md font-medium flex justify-center items-center text-yellow-600'>
+            <div className='text-md font-medium flex justify-center items-center text-yellow-700'>
               ₹670/Kg
             </div>
           </div>
-          <div className='border border-black p-4 rounded-lg'>
+          <div className='p-8 rounded-lg bg-stone-200'>
             <div className='flex justify-center items-center'>
                 <img src={foodImg2} alt="" className='w-52 rounded-lg'/>
             </div>
-            <div className='text-lg text-clip w-60 pt-4 flex justify-center items-center'>
+            <div className='text-lg text-clip w-60 pt-4 flex justify-center  items-center'>
               Walnuts
             </div>
             <div className='text-md font-medium flex justify-center items-center text-yellow-600'>
               ₹670/Kg
             </div>
           </div>
-          <div className='border border-black p-4 rounded-lg'>
+          <div className='p-8 rounded-lg bg-stone-200'>
             <div className='flex justify-center items-center'>
                 <img src={foodImg3} alt="" className='w-52 rounded-lg'/>
             </div>
