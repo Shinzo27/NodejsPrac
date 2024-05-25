@@ -39,13 +39,43 @@ const Expertise = () => {
   };
   return (
     <>
-        <div>
-            <div>
-                <img src={foodImg1} alt="" />
+        <div className='flex justify-center items-center pb-8'>
+          <h1 className='text-4xl font-semibold font-Dosis'>Our Expertise!</h1>
+        </div>
+        <div className='flex items-center justify-center gap-16 font-Dosis font-semibold'>
+          <div className='border border-black p-4 rounded-lg'>
+            <div className='flex justify-center items-center'>
+                <img src={foodImg1} alt="" className=' w-52 rounded-lg'/>
             </div>
-            <div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit iure qui provident quam, natus voluptate?
+            <div className='text-lg text-clip w-60 pt-4 flex justify-center items-center'>
+                Cashew
             </div>
+            <div className='text-md font-medium flex justify-center items-center text-yellow-600'>
+              ₹670/Kg
+            </div>
+          </div>
+          <div className='border border-black p-4 rounded-lg'>
+            <div className='flex justify-center items-center'>
+                <img src={foodImg2} alt="" className='w-52 rounded-lg'/>
+            </div>
+            <div className='text-lg text-clip w-60 pt-4 flex justify-center items-center'>
+              Walnuts
+            </div>
+            <div className='text-md font-medium flex justify-center items-center text-yellow-600'>
+              ₹670/Kg
+            </div>
+          </div>
+          <div className='border border-black p-4 rounded-lg'>
+            <div className='flex justify-center items-center'>
+                <img src={foodImg3} alt="" className='w-52 rounded-lg'/>
+            </div>
+            <div className='text-lg text-clip w-60 pt-4 flex justify-center items-center'>
+                Almonds
+            </div>
+            <div className='text-md font-medium flex justify-center items-center text-yellow-600'>
+              ₹670/Kg
+            </div>
+          </div>
         </div>
     </>
   )
