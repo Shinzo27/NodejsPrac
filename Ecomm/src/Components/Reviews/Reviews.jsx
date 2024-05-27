@@ -15,13 +15,13 @@ const Reviews = () => {
           <div className='flex items-center justify-center gap-16 font-Dosis pt-8'>
             <div className="p-8 rounded-lg bg-gray-100 text-black">
               <div className="flex justify-center items-center">
-                <img src={blogImg1} alt="" className=" w-52 rounded-lg" />
+                <img src={blogImg1} alt="" className=" w-72 rounded-lg" />
               </div>
               <div className="text-lg text-clip w-60 pt-4 flex justify-center items-center">
-                Cashew
+                Lorem, ipsum dolor.
               </div>
               <div className="text-md font-medium flex justify-center items-center text-yellow-700">
-                ₹670/Kg
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, harum.
               </div>
             </div>
           </div>
