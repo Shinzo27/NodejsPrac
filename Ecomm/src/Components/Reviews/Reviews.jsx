@@ -12,16 +12,44 @@ const Reviews = () => {
           <div className='flex justify-center items-center'>
             <h1 className=' text-3xl font-semibold font-Dosis'>Reviews</h1>
           </div>
-          <div className='flex items-center justify-center gap-16 font-Dosis pt-8'>
-            <div className="p-8 rounded-lg bg-gray-100 text-black">
-              <div className="flex justify-center items-center">
-                <img src={blogImg1} alt="" className=" w-72 rounded-lg" />
+          <div className='flex items-center justify-center gap-10'>
+            <div className='flex items-center justify-center gap-16 font-Dosis pt-8'>
+              <div className="p-8 rounded-lg bg-gray-300 text-black">
+                <div className="flex justify-center items-center">
+                  <img src={blogImg1} alt="" className=" w-80 rounded-lg" />
+                </div>
+                <div className="text-lg pt-4 flex justify-center items-center">
+                  Customer Name
+                </div>
+                <div className="text-md text-clip w-80 font-medium flex justify-center items-center text-yellow-700">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut hic voluptates labore quod perferendis dolores nobis veniam, praesentium quaerat quam, libero dolorem temporibus nihil natus facere deleniti nam excepturi modi.
+                </div>
               </div>
-              <div className="text-lg text-clip w-60 pt-4 flex justify-center items-center">
-                Lorem, ipsum dolor.
+            </div>
+            <div className='flex items-center justify-center gap-16 font-Dosis pt-8'>
+              <div className="p-8 rounded-lg bg-gray-300 text-black">
+                <div className="flex justify-center items-center w-80">
+                  <img src={blogImg4} alt="" className=" w-80 rounded-lg" />
+                </div>
+                <div className="text-lg pt-4 flex justify-center items-center">
+                  Customer Name
+                </div>
+                <div className="text-md text-clip w-80 font-medium flex justify-center items-center text-yellow-700">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut hic voluptates labore quod perferendis dolores nobis veniam, praesentium quaerat quam, libero dolorem temporibus nihil natus facere deleniti nam excepturi modi.
+                </div>
               </div>
-              <div className="text-md font-medium flex justify-center items-center text-yellow-700">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, harum.
+            </div>
+            <div className='flex items-center justify-center gap-16 font-Dosis pt-8'>
+              <div className="p-8 rounded-lg bg-gray-300 text-black">
+                <div className="flex justify-center items-center w-80">
+                  <img src={blogImg3} alt="" className="rounded-lg object-fill"/>
+                </div>
+                <div className="text-lg pt-4 flex justify-center items-center">
+                  Customer Name
+                </div>
+                <div className="text-md text-clip w-80 font-medium flex justify-center items-center text-yellow-700">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut hic voluptates labore quod perferendis dolores nobis veniam, praesentium quaerat quam, libero dolorem temporibus nihil natus facere deleniti nam excepturi modi.
+                </div>
               </div>
             </div>
           </div>
