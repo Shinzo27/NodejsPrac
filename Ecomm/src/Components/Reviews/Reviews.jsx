@@ -12,7 +12,7 @@ const Reviews = () => {
           <div className='flex justify-center items-center'>
             <h1 className=' text-3xl font-semibold font-Dosis'>Reviews</h1>
           </div>
-          <div className='flex items-center justify-center gap-10'>
+          <div className='lg:flex lg:items-center lg:justify-center gap-10'>
             <div className='flex items-center justify-center gap-16 font-Dosis pt-8'>
               <div className="p-8 rounded-lg bg-gray-300 text-black">
                 <div className="flex justify-center items-center">

@@ -32,7 +32,7 @@ const Expertise = () => {
         <div className="flex justify-center items-center pb-8">
           <h1 className="text-4xl font-semibold font-Dosis">Our Expertise!</h1>
         </div>
-        <div className="flex items-center justify-center gap-16 font-Dosis font-semibold">
+        <div className="lg:flex lg:items-center lg:justify-center gap-16 font-Dosis font-semibold">
           <div className="p-8 rounded-lg bg-gray-100 text-black">
             <div className="flex justify-center items-center">
               <img src={foodImg1} alt="" className=" w-52 rounded-lg" />
@@ -72,4 +72,4 @@ const Expertise = () => {
   );
 };
 
-export default Expertise;
+export default Expertise
