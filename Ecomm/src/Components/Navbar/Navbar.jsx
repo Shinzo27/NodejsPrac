@@ -81,7 +81,9 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className={`px-2 w-full flex-grow lg:items-center lg:w-auto lg:hidden ${ toggleButton ? "block" : "hidden" }`}>
+      <div
+        className={`px-2 w-full flex-grow lg:items-center lg:w-auto lg:hidden ${toggleButton ? "block" : "hidden"}`}
+      >
         <div className="lg:flex-grow text-l">
           <a
             href="#"
