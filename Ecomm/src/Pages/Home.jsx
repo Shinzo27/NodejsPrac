@@ -5,15 +5,19 @@ import Navbar from '../Components/Navbar/Navbar'
 import Expertise from '../Components/Expertise/Expertise'
 import Reviews from '../Components/Reviews/Reviews'
 import Footer from '../Components/Footer/Footer'
+import Product from './Product'
+
+
 
 const Home = () => {
   return (
     <>
         <Navbar/>
-        <Hero/>
+        {/* <Hero/>
         <About/>
         <Expertise/>
-        <Reviews/>
+        <Reviews/> */}
+        <Product  />
         <Footer/>
     </>
   )
