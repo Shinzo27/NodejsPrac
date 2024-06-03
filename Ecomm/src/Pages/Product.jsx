@@ -8,34 +8,91 @@ import driedFruit4 from '../assets/driedfruit4.jpg'
 const productArray = [
   {
     img: driedFruit1,
-    name: "Df1",
-    price: 650
+    name: "Dried Strawberry",
+    price: "₹650"
   },
   {
     img: driedFruit2,
-    name: "Df2",
-    price: 750
+    name: "Dried Kiwi",
+    price: "₹750"
   },
   {
     img: driedFruit3,
-    name: "Df3",
-    price: 950
+    name: "Dried Orange",
+    price: "₹950"
   },
   {
     img: driedFruit4,
-    name: "Df4",
-    price: 850
+    name: "Dried Pomelo Green",
+    price: "₹850"
+  },
+  {
+    img: driedFruit4,
+    name: "Dried Pomelo Green",
+    price: "₹850"
+  },
+  {
+    img: driedFruit4,
+    name: "Dried Pomelo Green",
+    price: "₹850"
+  },
+  {
+    img: driedFruit4,
+    name: "Dried Pomelo Green",
+    price: "₹850"
   }
 ]
 
 const Product = () => {
   return (
     <>
-      <div className='container'>
+      <div className='container pt-5'>
         <div className=' w-full h-16 bg-blue-400 flex items-center justify-center text-white rounded-xl'>
           <h1 className='text-3xl'>Category Name</h1>
         </div>
-        <div className=' p-5 flex justify-center items-center gap-5'>
+        <div className=' p-5 flex justify-center items-center gap-5 flex-wrap'>
+          {
+            productArray.map((product)=>(
+              <div>
+                <ProductCard img={product.img} ProductName={product.name} ProductPrice={product.price}/>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      <div className='container pt-5'>
+        <div className=' w-full h-16 bg-blue-400 flex items-center justify-center text-white rounded-xl'>
+          <h1 className='text-3xl'>Category Name</h1>
+        </div>
+        <div className=' p-5 flex justify-center items-center gap-5 flex-wrap'>
+          {
+            productArray.map((product)=>(
+              <div>
+                <ProductCard img={product.img} ProductName={product.name} ProductPrice={product.price}/>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      <div className='container pt-5'>
+        <div className=' w-full h-16 bg-blue-400 flex items-center justify-center text-white rounded-xl'>
+          <h1 className='text-3xl'>Category Name</h1>
+        </div>
+        <div className=' p-5 flex justify-center items-center gap-5 flex-wrap'>
+          {
+            productArray.map((product)=>(
+              <div>
+                <ProductCard img={product.img} ProductName={product.name} ProductPrice={product.price}/>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      <div className='container pt-5'>
+        <div className=' w-full h-16 bg-blue-400 flex items-center justify-center text-white rounded-xl'>
+          <h1 className='text-3xl'>Category Name</h1>
+        </div>
+        <div className=' p-5 flex justify-center items-center gap-5 flex-wrap'>
           {
             productArray.map((product)=>(
               <div>
