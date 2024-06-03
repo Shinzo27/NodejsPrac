@@ -4,6 +4,8 @@ import driedFruit1 from '../assets/driedfruit1.jpg'
 import driedFruit2 from '../assets/driedfruit2.jpg'
 import driedFruit3 from '../assets/driedfruit3.jpg'
 import driedFruit4 from '../assets/driedfruit4.jpg'
+import Navbar from '../Components/Navbar/Navbar'
+import Footer from '../Components/Footer/Footer'
 
 const productArray = [
   {
@@ -46,6 +48,7 @@ const productArray = [
 const Product = () => {
   return (
     <>
+      <Navbar/>
       <div className='container pt-5'>
         <div className=' w-full h-16 bg-blue-400 flex items-center justify-center text-white rounded-xl'>
           <h1 className='text-3xl'>Category Name</h1>
@@ -102,6 +105,7 @@ const Product = () => {
           }
         </div>
       </div>
+      <Footer/>
     </>
   )
 }

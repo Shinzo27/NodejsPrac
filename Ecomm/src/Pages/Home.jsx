@@ -8,16 +8,15 @@ import Footer from '../Components/Footer/Footer'
 import Product from './Product'
 
 
-
 const Home = () => {
   return (
     <>
         <Navbar/>
-        {/* <Hero/>
+        <Hero/>
         <About/>
         <Expertise/>
-        <Reviews/> */}
-        <Product  />
+        <Reviews/>
+        {/* <Product  /> */}
         <Footer/>
     </>
   )

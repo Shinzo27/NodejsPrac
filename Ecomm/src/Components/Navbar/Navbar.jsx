@@ -3,7 +3,7 @@ import { IoCart } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
 import { HiMenu } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
-
+import {Link} from 'react-router-dom'
 const MenuLinks = [
   {
     id: 1,
@@ -13,7 +13,7 @@ const MenuLinks = [
   {
     id: 2,
     name: "Shop",
-    link: "/shop",
+    link: "/products",
   },
   {
     id: 3,
@@ -48,7 +48,7 @@ const Navbar = () => {
                     key={index}
                     className="inline-block px-4 font-medium text-gray-500 hover:text-orange-500 duration-200"
                   >
-                    <a href={data.link}>{data.name}</a>
+                    <Link to={data.link}>{data.name}</Link>
                   </li>
                 ))}
               </ul>
