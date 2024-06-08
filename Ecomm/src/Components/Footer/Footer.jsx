@@ -79,10 +79,10 @@ const Footer = () => {
           </div>
 
           {/* <!-- Main container div: holds the entire content of the footer, including four sections (Patel's Dryfruits and Masala, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. --> */}
-          <div className="mx-6 py-10 text-center md:text-left">
-            <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-6 py-10 text-center md:text-left ">
+            <div className=" flex justify-evenly items-center">
               {/* <!-- Patel's Dryfruits and Masala section --> */}
-              <div className="">
+              <div className=" w-96">
                 <h6 className="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -94,36 +94,13 @@ const Footer = () => {
                   </svg>
                   Patel's Dryfruits and Masala
                 </h6>
-                <p>
+                <p className="text-clip">
                   Here you can use rows and columns to organize your footer
                   content. Lorem ipsum dolor sit amet, consectetur adipisicing
                   elit.
                 </p>
               </div>
               {/* <!-- Products section --> */}
-              <div className="">
-                <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-                  Products
-                </h6>
-                <p className="mb-4">
-                  <a className="text-neutral-600 dark:text-neutral-200">
-                    Angular
-                  </a>
-                </p>
-                <p className="mb-4">
-                  <a className="text-neutral-600 dark:text-neutral-200">
-                    React
-                  </a>
-                </p>
-                <p className="mb-4">
-                  <a className="text-neutral-600 dark:text-neutral-200">Vue</a>
-                </p>
-                <p>
-                  <a className="text-neutral-600 dark:text-neutral-200">
-                    Laravel
-                  </a>
-                </p>
-              </div>
               {/* <!-- Useful links section --> */}
               <div className="">
                 <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
@@ -131,21 +108,21 @@ const Footer = () => {
                 </h6>
                 <p className="mb-4 cursor-pointer">
                   <a className="text-neutral-600 dark:text-neutral-200">
-                    Pricing
+                    Home
                   </a>
                 </p>
                 <p className="mb-4 cursor-pointer">
                   <a className="text-neutral-600 dark:text-neutral-200">
-                    Settings
+                    Shop
                   </a>
                 </p>
                 <p className="mb-4 cursor-pointer">
                   <a className="text-neutral-600 dark:text-neutral-200">
-                    Orders
+                    About
                   </a>
                 </p>
                 <p className="cursor-pointer">
-                  <a className="text-neutral-600 dark:text-neutral-200">Help</a>
+                  <a className="text-neutral-600 dark:text-neutral-200"></a>
                 </p>
               </div>
               {/* <!-- Contact section --> */}

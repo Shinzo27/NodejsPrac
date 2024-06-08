@@ -23,7 +23,7 @@ const MenuLinks = [
   {
     id: 4,
     name: "Login",
-    link: "/",
+    link: "/login",
   },
 ];
 
@@ -56,12 +56,12 @@ const Navbar = () => {
           </div>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-4 text-2xl">
-              <a href="">
+              <Link to="/cart">
                 <IoCart className="hover:text-orange-500" />
-              </a>
-              <a>
+              </Link>
+              <Link to="/profile">
                 <CgProfile className="hover:text-orange-500" />
-              </a>
+              </Link>
               <div>
                 <button>
                   {toggleButton ? (
