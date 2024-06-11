@@ -85,30 +85,30 @@ const Navbar = () => {
         className={`px-2 w-full flex-grow lg:items-center lg:w-auto lg:hidden ${toggleButton ? "block" : "hidden"}`}
       >
         <div className="lg:flex-grow text-l">
-          <a
-            href="#"
+          <Link
+            href="/"
             className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4 hover:text-orange-500"
           >
             Home
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/products"
             className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4 hover:text-orange-500"
           >
             Shop
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/about"
             className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4 hover:text-orange-500"
           >
             About
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/login"
             className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4 pb-5 hover:text-orange-500"
           >
             Login
-          </a>
+          </Link>
         </div>
       </div>
     </div>
