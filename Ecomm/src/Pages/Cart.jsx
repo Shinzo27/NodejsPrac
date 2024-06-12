@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
-import driedFruit4 from "../assets/driedfruit4.jpg";
 import driedFruit2 from "../assets/driedfruit2.jpg";
 import driedFruit1 from "../assets/driedfruit1.jpg";
-import Button from "../Components/Shared/Button";
 import CartItem from "../Components/CartItem/CartItem";
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([]);
-
+  const [cartItems, setCartItems] = useState();
   return (
     <>
       <Navbar />
@@ -31,6 +28,8 @@ const Cart = () => {
               <span className="w-full max-w-[200px] text-center">Total</span>
             </p>
           </div>
+            <CartItem img={driedFruit1} prodName={"Dried Fruit"} packType={"250gm"} prodPrice={"750"} quantity={"2"} total={"1400"}/>
+            <CartItem img={driedFruit2} prodName={"Dried Strawberry"} packType={"250gm"} prodPrice={"350"} quantity={"2"} total={"700"}/>
             <CartItem img={driedFruit1} prodName={"Dried Fruit"} packType={"250gm"} prodPrice={"750"} quantity={"2"} total={"1400"}/>
           <div className="bg-gray-50 rounded-xl p-6 w-full mb-8 max-lg:max-w-xl max-lg:mx-auto">
             <div className="flex items-center justify-between w-full mb-6">

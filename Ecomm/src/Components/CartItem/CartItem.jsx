@@ -1,5 +1,4 @@
 import React from "react";
-import driedFruit1 from "../../assets/driedfruit1.jpg";
 
 const CartItem = ({img, prodName, packType, prodPrice, quantity, total}) => {
   return (
