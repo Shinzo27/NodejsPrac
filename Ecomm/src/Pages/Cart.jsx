@@ -13,11 +13,11 @@ const Cart = () => {
   return (
     <>
       <Navbar />
-      <h2 className="title font-manrope font-bold text-4xl leading-10 mb-8 text-center text-black pt-10">
+      <h2 className="title font-manrope font-bold text-4xl leading-10 mb-8 text-center text-black pt-6">
             Shopping Cart
           </h2>
       { cartItems ? 
-      <section className="py-24 relative">
+      <section className=" py-6 relative">
         <div className="w-full max-w-7xl px-4 md:px-5 lg-6 mx-auto">
           
           <div className="hidden lg:grid grid-cols-2 py-6">
@@ -31,8 +31,7 @@ const Cart = () => {
               <span className="w-full max-w-[200px] text-center">Total</span>
             </p>
           </div>
-            <CartItem/>
-            <CartItem/>
+            <CartItem img={driedFruit1} prodName={"Dried Fruit"} packType={"250gm"} prodPrice={"750"} quantity={"2"} total={"1400"}/>
           <div className="bg-gray-50 rounded-xl p-6 w-full mb-8 max-lg:max-w-xl max-lg:mx-auto">
             <div className="flex items-center justify-between w-full mb-6">
               <p className="font-normal text-xl leading-8 text-gray-400">
