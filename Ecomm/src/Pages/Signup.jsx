@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 const Signup = () => {
   return (
     <>
-      <Navbar/>
       <div className="container flex justify-center items-center font-[sans-serif] text-[#333] pt-10">
         <div className="grid justify-center max-w-md mx-auto ">
           <div>
@@ -59,11 +58,9 @@ const Signup = () => {
                 </Link>
               </p>
             </div>
-            {/* vacation */}
           </form>
         </div>
       </div>
-      <Footer/>
     </>
 
   )

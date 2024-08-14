@@ -11,13 +11,12 @@ import Product from './Product'
 const Home = () => {
   return (
     <>
-        <Navbar/>
+        
         <Hero/>
         <About/>
         <Expertise/>
         <Reviews/>
         {/* <Product  /> */}
-        <Footer/>
     </>
   )
 }

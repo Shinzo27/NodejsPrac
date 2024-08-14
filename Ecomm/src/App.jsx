@@ -1,27 +1,30 @@
-import './App.css'
-import Home from './Pages/Home'
-import {RouterProvider, Routes, Route} from 'react-router-dom'
-import Product from './Pages/Product'
-import Login from './Pages/Login'
-import About from './Pages/About'
-import Cart from './Pages/Cart'
-import Profile from './Pages/Profile'
-import Signup from './Pages/Signup'
+import "./App.css";
+import Home from "./Pages/Home";
+import { RouterProvider, Routes, Route } from "react-router-dom";
+import Product from "./Pages/Product";
+import Login from "./Pages/Login";
+import About from "./Pages/About";
+import Cart from "./Pages/Cart";
+import Profile from "./Pages/Profile";
+import Signup from "./Pages/Signup";
+import Footer from "./Components/Footer/Footer";
+import Navbar from "./Components/Navbar/Navbar";
 function App() {
-
   return (
     <>
+      <Navbar />
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/products' element={<Product/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/about' element={<About/>}/>
-        <Route path='/cart' element={<Cart/>}/>
-        <Route path='/profile' element={<Profile/>}/>
-        <Route path='/signup' element={<Signup/>}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Product />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 const Login = () => {
   return (
     <>
-      <Navbar />
       <div className="container flex justify-center items-center font-[sans-serif] text-[#333] pt-10">
         <div className="grid justify-center max-w-md mx-auto ">
           <div>
@@ -86,7 +85,6 @@ const Login = () => {
           </form>
         </div>
       </div>
-      <Footer />
     </>
   );
 };
