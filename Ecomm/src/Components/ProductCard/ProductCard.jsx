@@ -29,7 +29,11 @@ const productArray = [
   }
 ]
 
-const ProductCard = ({ img, ProductName, ProductPrice}) => {
+const addToCartHandler = (id) => {
+  console.log(id + " Clicked!");
+}
+
+const ProductCard = ({ img, ProductName, ProductPrice, id }) => {
   return (
     <>
       <div className=' w-96 h-44 bg-gray-200 flex items-center justify-between rounded-xl font-Dosis text-gray-600'>
@@ -37,7 +41,7 @@ const ProductCard = ({ img, ProductName, ProductPrice}) => {
           <h1 className='font-semibold'>{ProductName}</h1>
           <h2 className=' font-medium pt-2'>{ProductPrice}</h2>
           <div className='pt-3 pl-4'>
-            <Button text={"Add to cart"}/>
+            <button className='bg-blue-500 text-white font-semibold cursor-pointer hover:scale-105 py-2 px-8 rounded-full relative z-10' onClick={()=>{addToCartHandler(id)}}> Add to cart</button>
           </div>
         </div>
         <div className=' h-28 w-28 mr-4'>
